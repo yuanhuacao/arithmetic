@@ -7,7 +7,7 @@ import java.util.Stack;
  * 获取栈的最小值
  * 算法都为 N(1)
  */
-public class MinStatck {
+public class MinStatck2 {
 
     private Stack dataStack=new Stack();
     private Stack minStack=new Stack();
@@ -17,19 +17,18 @@ public class MinStatck {
         if (minStack.isEmpty()){
                 minStack.push(a);
         }else {
-            if (a<=(int)minStack.peek()){
+            int min=(int)minStack.peek();
+            if (a<=min){
                     minStack.push(a);
+            }else {
+                minStack.push(min);
             }
         }
     }
 
     public int   pop(){
-        int value=(int)dataStack.pop();
-        int min=(int)minStack.peek();
-        if (value<=min){
-            minStack.pop();
-        }
-        return  value;
+        minStack.pop();
+        return  (int)dataStack.pop();
     }
 
     public int getMin(){
@@ -37,12 +36,18 @@ public class MinStatck {
     }
 
     public static void main(String[] args) {
-        MinStatck minStatck=new MinStatck();
+        MinStatck2 minStatck=new MinStatck2();
         minStatck.push(3);
         minStatck.push(5);
         minStatck.push(2);
+        minStatck.push(1);
         minStatck.push(4);
         minStatck.push(1);
+        minStatck.push(1);
+        System.out.println(minStatck.pop());
+        System.out.println(minStatck.pop());
+        System.out.println(minStatck.pop());
+        System.out.println(minStatck.pop());
         System.out.println(minStatck.pop());
         System.out.println(minStatck.pop());
         System.out.println(minStatck.getMin());
