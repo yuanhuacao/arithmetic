@@ -27,6 +27,6 @@ public class Hanoi {
 
     public static void main(String[] args) {
         Hanoi hanoi = new Hanoi();
-        hanoi.hanoi(3, '源', '辅', '目');
+        hanoi.hanoi(5, '源', '辅', '目');
     }
 }
