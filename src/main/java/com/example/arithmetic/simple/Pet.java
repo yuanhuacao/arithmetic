@@ -1,5 +1,7 @@
 package com.example.arithmetic.simple;
 
+import java.util.Objects;
+
 public class Pet {
 
     public Pet(String type) {
@@ -14,5 +16,19 @@ public class Pet {
 
     public void setType(String type) {
         this.type = type;
+    }
+    private String name ;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Pet(String type, String name) {
+        this.type = type;
+        this.name = name;
     }
 }
