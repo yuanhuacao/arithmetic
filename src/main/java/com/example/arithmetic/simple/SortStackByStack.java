@@ -20,20 +20,19 @@ public class SortStackByStack {
         return  help;
     }
 
+    public static  int feibo(int i){
+        if (i<1){
+            throw  new IllegalArgumentException();
+        }
+        if (i==1){
+            return  1;
+        }
+        return  i+feibo(i-1);
+    }
+
 
     public static void main(String[] args) {
-        Stack<Integer> stack=new Stack<>();
-        stack.push(3);
-        stack.push(2);
-        stack.push(4);
-        stack.push(5);
-        stack.push(1);
-
-        SortStackByStack sortStackByStack=new SortStackByStack();
-        Stack help=sortStackByStack.sort(stack);
-        while (!help.isEmpty()){
-            System.out.println(help.pop());
-        }
+        System.out.println(feibo(99));
     }
 
 }

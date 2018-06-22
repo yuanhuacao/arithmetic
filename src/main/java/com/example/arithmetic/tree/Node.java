@@ -15,4 +15,13 @@ public class Node {
         );
     }
 
+    @Override
+    public String toString() {
+        return "Node{" +
+                "iData=" + iData +
+                ", dData=" + dData +
+                ", leftNode=" + leftNode +
+                ", rightNode=" + rightNode +
+                '}';
+    }
 }
