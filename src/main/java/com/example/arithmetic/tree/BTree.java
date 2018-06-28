@@ -47,17 +47,33 @@ public class BTree {
 
         }
     }
-    public Node find(int key){
-        Node curNode=root;
-        while (curNode.iData!=key){
-            if (key<curNode.iData){
-                curNode=curNode.leftNode;
-            }else {
-                curNode=curNode.rightNode;
+
+    public Node find(int key) {
+        Node curNode = root;
+        while (curNode.iData != key) {
+            if (key < curNode.iData) {
+                curNode = curNode.leftNode;
+            } else {
+                curNode = curNode.rightNode;
             }
         }
-        return  curNode;
+        return curNode;
+    }
 
+    public Node min() {
+        Node curNode = root;
+        while (curNode.leftNode != null) {
+            curNode = curNode.leftNode;
+        }
+        return curNode;
+    }
+
+    public Node max() {
+        Node curNode = root;
+        while (curNode.rightNode != null) {
+            curNode = curNode.rightNode;
+        }
+        return curNode;
     }
 
     public static void main(String[] args) {
@@ -67,9 +83,11 @@ public class BTree {
         b.insert(4);
         b.insert(3);
         b.insert(2);
-        b.insert(1);
+        b.insert(9);
         System.out.println(JSON.toJSONString(b.root));
         System.out.println(b.find(3).iData);
+        System.out.println(b.min().iData);
+        System.out.println(b.max().iData);
 
     }
 }
