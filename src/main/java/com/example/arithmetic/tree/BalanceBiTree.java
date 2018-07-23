@@ -5,7 +5,40 @@ import com.alibaba.fastjson.JSON;
 
 import java.util.concurrent.ConcurrentLinkedQueue;
 
+/**
+ * 当出现图2.1（b）中的情况时只需要进行一次右旋转操作，旋转后得到如图2.1（d）所示的平衡二叉树。
 
+ 当出现图2.1（c）中的情况时需要先对A的左子树B进行左旋操作，然后再进行右旋操作，旋转后得到如图2.1（e）所示的平衡二叉树。
+
+ 当出现图2.2（b）中的情况时只需要进行一次右旋转操作，旋转后得到如图2.1（d）所示的平衡二叉树。
+
+ 当出现图2.2（c）中的情况时需要先对A的右子树B进行右旋，然后再进行左旋操作，旋转后得到如图2.2（e）所示的平衡二叉树。
+
+ 单旋转是针对于左左和右右这两种情况的解决方案，这两种情况是对称的，只要解决了左左这种情况，右右就很好办了。图3是左左情况的解决方案，节点k2不满足平衡特性，
+ 因为它的左子树k1比右子树Z深2层，而且k1子树中，更深的一层的是k1的左子树X子树，所以属于左左情况。
+
+
+
+ 为使树恢复平衡，我们把k2变成这棵树的根节点，因为k2大于k1，把k2置于k1的右子树上，而原本在k1右子树的Y大于k1，小于k2，就把Y置于k2的左子树上，
+ 这样既满足了二叉查找树的性质，又满足了平衡二叉树的性质。
+
+ 这样的操作只需要一部分指针改变，结果我们得到另外一颗二叉查找树，它是一棵AVL树，因为X向上一移动了一层，Y还停留在原来的层面上，Z向下移动了一层。
+ 整棵树的新高度和之前没有在左子树上插入的高度相同，插入操作使得X高度长高了。因此，由于这颗子树高度没有变化，所以通往根节点的路径就不需要继续旋转了。
+
+ 右旋转代码
+
+ 复制代码
+ void R_rotate(BiTree *t)
+ {
+ BiTree s;
+ s = (*t)->lchild;                    //s指向t的左子树根结点
+ (*t)->lchild = s->rchild;          //s的右子树挂接为t的左子树
+ s->rchild = (*t);
+ *t = s;                                //t指向新的根结点
+ }
+ 复制代码
+ * @param <T>
+ */
 public class BalanceBiTree<T> {
 
     private Node root;
@@ -150,6 +183,18 @@ public class BalanceBiTree<T> {
 
     }
 
+    /**
+     * void L_Rotate(BiTree&T)
+     {
+     BiTree p;
+     p=T->rchild;     //假如此时T指向4，则p指向7.
+     T->rchild=p->lchild;  //让7的左子树挂接到4的右子树上
+     p->lchild=T;    //让7的左孩子指向4
+     T=p;   //树根指向7
+     }
+     * @param nd
+     */
+
     private void leftRotate(Node nd) {
         Node top = nd.rChild;
         nd.rChild = top.lChild;
@@ -167,6 +212,19 @@ public class BalanceBiTree<T> {
         }
         nd.parent = top;
     }
+
+    /**
+     *  复制代码
+     void R_rotate(BiTree *t)
+     {
+     BiTree s;
+     s = (*t)->lchild;                    //s指向t的左子树根结点
+     (*t)->lchild = s->rchild;          //s的右子树挂接为t的左子树
+     s->rchild = (*t);
+     *t = s;                                //t指向新的根结点
+     }
+     * @param nd
+     */
 
     private void rightRotate(Node nd) {
         Node top = nd.lChild;
@@ -252,14 +310,15 @@ public class BalanceBiTree<T> {
 
     public static void main(String[] args) {
         BalanceBiTree biTree=new BalanceBiTree();
-        biTree.insert("a");
-        biTree.insert("b");
-        biTree.insert("c");
-        biTree.insert("d");
-        biTree.insert("e");
-        biTree.insert("f");
-        System.out.println(biTree);
-        System.out.println(JSON.toJSONString(biTree.root));
+        biTree.insert("1");
+        biTree.insert("2");
+        biTree.insert("3");
+        biTree.insert("4");
+        biTree.insert("5");
+        biTree.insert("6");
+//        System.out.println(biTree);
+//        System.out.println(JSON.toJSONString(biTree.root));
+        biTree.printTree();
 
     }
 }

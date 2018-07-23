@@ -21,7 +21,7 @@ import jdk.nashorn.internal.runtime.JSONFunctions;
  * n0=n2+1;
  * n0*0+n1*1+n2*2=n
  *
- *
+ *就这样做：让4节点的左孩子指向3的右子树（此时为NULL），让3的右孩子指向4，让树根指向3，如图
  *
  *
  */
