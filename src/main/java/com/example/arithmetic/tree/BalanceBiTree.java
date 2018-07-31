@@ -309,17 +309,30 @@ public class BalanceBiTree<T> {
         public int bf;
     }
 
+    public  static  void  test(int i){
+        if(i<1){
+            return;
+        }
+        System.out.printf("diidi"+i);
+
+        test(--i);
+        System.out.printf("我是"+i);
+
+    }
+
     public static void main(String[] args) {
-        BalanceBiTree biTree = new BalanceBiTree();
-        biTree.insert("1");
-        biTree.insert("2");
-        biTree.insert("3");
-        biTree.insert("4");
-        biTree.insert("5");
-        biTree.insert("6");
-//        System.out.println(biTree);
-//        System.out.println(JSON.toJSONString(biTree.root));
-        biTree.printTree();
+//        BalanceBiTree biTree = new BalanceBiTree();
+//        biTree.insert("1");
+//        biTree.insert("2");
+//        biTree.insert("3");
+//        biTree.insert("4");
+//        biTree.insert("5");
+//        biTree.insert("6");
+////        System.out.println(biTree);
+////        System.out.println(JSON.toJSONString(biTree.root));
+//        biTree.printTree();
+
+        test(10);
 
     }
 }
