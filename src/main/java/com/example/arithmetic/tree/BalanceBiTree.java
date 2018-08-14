@@ -2,7 +2,11 @@
 package com.example.arithmetic.tree;
 
 import com.alibaba.fastjson.JSON;
+import org.apache.commons.lang.time.DateUtils;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 /**
@@ -320,7 +324,7 @@ public class BalanceBiTree<T> {
 
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ParseException {
 //        BalanceBiTree biTree = new BalanceBiTree();
 //        biTree.insert("1");
 //        biTree.insert("2");
@@ -332,7 +336,15 @@ public class BalanceBiTree<T> {
 ////        System.out.println(JSON.toJSONString(biTree.root));
 //        biTree.printTree();
 
-        test(10);
+//        test(10);
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        Date repayDay = sdf.parse(sdf.format(new Date()));//还款日期  放款日期+1天+1个月
+        System.out.println(repayDay);
+        Date d=DateUtils.addMonths(sdf.parse("2018-01-31"),1);
+        System.out.println(sdf.format(d));
+
+
+
 
     }
 }
