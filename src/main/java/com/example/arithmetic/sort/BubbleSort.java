@@ -1,6 +1,6 @@
 package com.example.arithmetic.sort;
 
-public class DirectSelectSort {
+public class BubbleSort {
 
     public static void main(String[] args)
     {
@@ -10,8 +10,20 @@ public class DirectSelectSort {
         {
             System.out.print(a[i] + " ");
         }
-        selectSort(a);
-
+        // 冒泡排序
+        for (int i = 0; i < a.length; i++)
+        {
+            for (int j = 0; j < a.length-1-i ; j++)
+            {
+                // 这里-i主要是每遍历一次都把最大的i个数沉到最底下去了，没有必要再替换了
+                if (a[j] > a[j + 1])
+                {
+                    int temp = a[j];
+                    a[j] = a[j + 1];
+                    a[j + 1] = temp;
+                }
+            }
+        }
         System.out.println();
         System.out.println("排序之后：");
         for (int i = 0; i < a.length; i++)
@@ -20,25 +32,5 @@ public class DirectSelectSort {
         }
 
     }
-
-    public  static void selectSort(int [] array){
-
-        for(int i=0;i<array.length;i++){
-            int min=array[i];
-            int temp=i;
-            for (int j=i+1;j<array.length;j++){
-                if (array[j]<min){
-                    min=array[j];
-                    temp=j;
-                }
-            }
-            array[temp]=array[i];
-            array[i]=min;
-
-        }
-
-    }
-
-
 
 }

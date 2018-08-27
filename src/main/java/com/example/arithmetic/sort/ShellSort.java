@@ -27,41 +27,28 @@ public class ShellSort {
 
 
 
-    public  static  void shellSortMy(int[] array){
-
-        int number=array.length/2;
-        int i;
-        int j;
-        int temp;
-        while (number>=1){
-            for (i=number;i<array.length;i++){
-                temp=array[i];
-                j=i-number;
-                while (j>=0&&array[j]>temp){
-                    array[j+number]=array[j];
-                    j=j-number;
-                }
-                array[j+number]=temp;
-            }
-            number=number/2;
-
-        }
 
 
-    }
+
+
+
 
     public static void main(String[] args)
     {
 
 
+        System.out.println(5/2);
 
-        int[] a = { 49, 38, 65, 97, 76, 13, 27, 49, 78, 34, 12, 64, 1 };
-        shellSortMy(a);
+//        int[] a = { 49, 38, 65, 97, 76, 13, 27, 49, 78, 34, 12, 64, 1 };
+
+        int [] a={2,1,4,5,3};
         System.out.println("排序之前：");
         for (int i = 0; i < a.length; i++)
         {
             System.out.print(a[i] + " ");
         }
+//        shellSort(a);
+
         // 希尔排序
         int d = a.length;
         while (true)
@@ -73,7 +60,7 @@ public class ShellSort {
                 {
                     int temp = a[i];
                     int j;
-                    for (j = i - d; j >= 0 && a[j] > temp; j = j - d)
+                    for (j=  i - d; j >= 0 && a[j] > temp; j = j - d)
                     {
                         a[j + d] = a[j];
                     }
