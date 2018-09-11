@@ -23,8 +23,8 @@ public class DirectInsertSort {
         for (int i=1;i<array.length;i++){
             int temp=array[i];
             int j;
-            for ( j=i-1;j>=0;j--){
-                if (array[j]>temp){
+            for (j=i-1;j>=0;j--){
+                if (temp<array[j]){
                     array[j+1]=array[j];
                 }else {
                     break;
