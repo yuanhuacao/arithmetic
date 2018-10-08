@@ -23,19 +23,19 @@ public class DirectSelectSort {
 
     public  static void selectSort(int [] array){
 
-        for(int i=0;i<array.length;i++){
-            int min=array[i];
-            int temp=i;
-            for (int j=i+1;j<array.length;j++){
-                if (array[j]<min){
-                    min=array[j];
-                    temp=j;
-                }
-            }
-            array[temp]=array[i];
-            array[i]=min;
+       for (int i=0;i<array.length;i++){
+           int min=array[i];
+           int temp=i;
+           for (int j=i+1;j<array.length;j++){
+               if (array[j]<min){
+                   min=array[j];
+                   temp=j;
+               }
+           }
+           array[temp]=array[i];
+           array[i]=min;
 
-        }
+       }
 
     }
 

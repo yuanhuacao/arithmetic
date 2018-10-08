@@ -337,11 +337,11 @@ public class BalanceBiTree<T> {
 //        biTree.printTree();
 
 //        test(10);
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        Date repayDay = sdf.parse(sdf.format(new Date()));//还款日期  放款日期+1天+1个月
-        System.out.println(repayDay);
-        Date d=DateUtils.addMonths(sdf.parse("2018-01-31"),1);
-        System.out.println(sdf.format(d));
+//        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+//        Date repayDay = sdf.parse(sdf.format(new Date()));//还款日期  放款日期+1天+1个月
+//        System.out.println(repayDay);
+//        Date d=DateUtils.addMonths(sdf.parse("2018-01-31"),1);
+//        System.out.println(sdf.format(d));
 
 
 

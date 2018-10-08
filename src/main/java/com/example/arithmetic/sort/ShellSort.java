@@ -5,6 +5,8 @@ public class ShellSort {
     /**
      * wiki
      * @param array
+     * 分组插入排序，最后再合并
+     *
      */
     public static void shellSort(int[] array) {
         int number = array.length / 2;
@@ -62,7 +64,8 @@ public class ShellSort {
                     int j;
                     for (j=  i - d; j >= 0 && a[j] > temp; j = j - d)
                     {
-                        a[j + d] = a[j];
+
+                            a[j + d] = a[j];
                     }
                     a[j + d] = temp;
                 }
