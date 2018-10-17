@@ -15,6 +15,8 @@ public class Chongzai {
     public static void main(String[] args) {
         Chongzai chongzai=new Chongzai();
         chongzai.add(1,2);
+        String chong="";
 
     }
+
 }
