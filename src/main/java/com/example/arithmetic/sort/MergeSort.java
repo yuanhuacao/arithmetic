@@ -79,6 +79,10 @@ public class MergeSort {
 
         MergeSort.sort(nums, 0, nums.length - 1);
         System.out.println(Arrays.toString(nums));
+
+        int n=1;
+        System.out.println(n++);
+        System.out.println(n);
     }
 
 }
