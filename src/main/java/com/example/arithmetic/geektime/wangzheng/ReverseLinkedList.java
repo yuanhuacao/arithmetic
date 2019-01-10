@@ -64,7 +64,7 @@ public class ReverseLinkedList {
 
         }
         System.out.println("*****************");
-        SingleNode reHead = reverse(head);
+        SingleNode reHead = reverse2(head);
         while (reHead != null) {
             System.out.println(reHead.getData());
             reHead = reHead.getNext();

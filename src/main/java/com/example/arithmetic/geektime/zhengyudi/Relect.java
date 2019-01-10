@@ -9,9 +9,12 @@ public class Relect {
         new Exception("#" + i).printStackTrace();
     }
 
-    public static void main(String[] args) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+    public static void i(String[] args) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
         Class z=Relect.class;
         Method method=z.getMethod("target", int.class);
-        method.invoke(null,0);
+        for (int i = 0; i <20 ; i++) {
+//            method.invoke(null,);
+
+        }
     }
 }

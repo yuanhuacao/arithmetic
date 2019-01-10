@@ -100,8 +100,11 @@ public class MergeSort {
 
 
         int[] nums = {2, 7, 8, 3, 1, 6, 9, 0, 5, 4};
+        System.out.println(Arrays.toString(nums));
 
         merge_sort(nums, nums.length);
         System.out.println(Arrays.toString(nums));
+
+        Arrays.sort(nums);
     }
 }

@@ -4,21 +4,23 @@ import java.util.Arrays;
 
 public class MergeSortTest {
 
+
     public static void sort(int a[], int low, int high) {
-            if(low>=high){
-                return;
-            }
-            int mid = (low + high) / 2;
-            sort(a, low, mid);
-            sort(a, mid + 1, high);
-            merge(a, low, mid, high);
+        if (low >= high) {
+            return;
+        }
+        int mid = (low + high) / 2;
+        sort(a, low, mid);
+        sort(a, mid + 1, high);
+        merge(a,low,mid,high);
+
     }
 
-    public static void merge(int a[], int low, int mid, int high) {
-        int temp[] = new int[high - low + 1];
+    public static  void merge(int a[], int low, int mid, int high) {
         int i = low;
         int j = mid + 1;
         int k = 0;
+        int[] temp = new int[high - low + 1];
 
         while (i <= mid && j <= high) {
             if (a[i] <= a[j]) {
@@ -34,8 +36,8 @@ public class MergeSortTest {
             temp[k++] = a[j++];
         }
 
-        for (int n = 0; n < temp.length; n++) {
-            a[n + low] = temp[n];
+        for (int n=0;n<temp.length;n++){
+            a[low+n]=temp[n];
         }
     }
 

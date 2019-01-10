@@ -9,44 +9,47 @@ import java.util.Map;
  */
 public class FloorDG {
 
-    public static Map<Integer, Integer> map = new HashMap();
+	public static Map<Integer, Integer> map = new HashMap();
 
-    public static int ditui(int n) {
+	public static int ditui(int n) {
 
-        if (n == 1) {
-            return 1;
-        }
-        if (n == 2) {
-            return 2;
-        }
-        if (map.containsKey(n)) {
-            return map.get(n);
-        }
-        int ret = ditui(n - 1) + ditui(n - 2);
-        map.put(n, ret);
-        return ret;
-    }
-    static  int f(int n) {
-        if (n == 1) return 1;
-        if (n == 2) return 2;
+		if (n == 1) {
+			return 1;
+		}
+		if (n == 2) {
+			return 2;
+		}
+		if (map.containsKey(n)) {
+			return map.get(n);
+		}
+		int ret = ditui(n - 1) + ditui(n - 2);
+		map.put(n, ret);
+		return ret;
+	}
 
-        int ret = 0;
-        int pre = 2;
-        int prepre = 1;
-        for (int i = 3; i <= n; ++i) {
-            ret = pre + prepre;
-            prepre = pre;
-            pre = ret;
-        }
-        return ret;
-    }
+	static int f(int n) {
+		if (n == 1)
+			return 1;
+		if (n == 2)
+			return 2;
 
+		int ret = 0;
+		int pre = 2;
+		int prepre = 1;
+		for (int i = 3; i <= n; ++i) {
+			ret = pre + prepre;
+			prepre = pre;
+			pre = ret;
+		}
+		return ret;
+	}
 
-    public static void main(String[] args) {
-        System.out.println(ditui(3));
-        System.out.println(ditui(4));
-        System.out.println(ditui(5));
-        System.out.println(ditui(6));
-    }
+	public static void main(String[] args) {
+		System.out.println(ditui(3));
+		System.out.println(ditui(4));
+		System.out.println(ditui(5));
+		System.out.println(ditui(6));
+		System.out.println(ditui(50));
+	}
 
 }
