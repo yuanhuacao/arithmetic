@@ -7,7 +7,7 @@ import java.util.Map;
 
 /**
  * @Description: TODO
- * @Author: 曹远华 (yuanhua.cao@luckincoffee.com)
+ * @Author: geeker (geek)
  * @Date: 2019/1/9 18:08
  */
 public class LRUCache {

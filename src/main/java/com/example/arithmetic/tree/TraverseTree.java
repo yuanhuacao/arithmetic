@@ -2,7 +2,7 @@ package com.example.arithmetic.tree;
 
 /**
  * @Description: 遍历二叉树
- * @Author: 曹远华 (yuanhua.cao@luckincoffee.com)
+ * @Author: geeker (geek)
  * @Date: 2019/1/8 17:13
  */
 public class TraverseTree {

@@ -2,7 +2,7 @@ package com.example.arithmetic.geektime.wangzheng;
 
 /**
  * @Description: TODO
- * @Author: 曹远华 (yuanhua.cao@luckincoffee.com)
+ * @Author: geeker (geek)
  * @Date: 2018/12/25 16:30
  */
 

@@ -2,7 +2,7 @@ package com.example.arithmetic;
 
 /**
  * @Description: 字符串转整数
- * @Author: 曹远华 (yuanhua.cao@luckincoffee.com)
+ * @Author: geeker (geek)
  * @Date: 2019/1/8 17:32
  */
 public class Atoi {

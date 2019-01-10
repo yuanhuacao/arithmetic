@@ -5,7 +5,7 @@ import java.util.Random;
 
 /**
  * @Description: 堆排序
- * @Author: 曹远华 (yuanhua.cao@luckincoffee.com)
+ * @Author: geeker (geek)
  * @Date: 2018/12/8 12:38
  */
 public class Heap {

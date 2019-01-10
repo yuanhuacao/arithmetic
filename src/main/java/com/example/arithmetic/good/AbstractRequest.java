@@ -1,8 +1,8 @@
-package com.example.arithmetic.lucky;
+package com.example.arithmetic.good;
 
 /**
  * @Description: TODO
- * @Author: 曹远华 (yuanhua.cao@luckincoffee.com)
+ * @Author: geeker (geek)
  * @Date: 2018/12/19 21:48
  */
 public abstract class AbstractRequest {
