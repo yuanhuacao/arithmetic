@@ -109,5 +109,10 @@ public class BTree {
         TraverseTree traverseTree=new TraverseTree();
         traverseTree.preOrderTraverse(b.root);
 
+        double i=Math.ceil(9/0.75+1);
+        System.out.println(i);
+        System.out.println(13*0.75);
+
+
     }
 }

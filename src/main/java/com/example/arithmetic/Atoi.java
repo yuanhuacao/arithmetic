@@ -12,13 +12,17 @@ public class Atoi {
 		if (str==null||"".equals(str)){
 			return 0;
 		}
-		if (str.length()>10){
-			return 0;
-		}
+
+		String temp[]=str.split(".");
+
+		str=str.substring(0,str.indexOf("."));
 		for (int i=0;i<str.length();i++){
 			if (str.charAt(i)>'9'|| str.charAt(i)<'0'){
 				return 0;
 			}
+		}
+		if (str.length()>10){
+			return 0;
 		}
 		tempLong=Long.parseLong(str);
 		if (tempLong>Integer.MAX_VALUE){
@@ -29,8 +33,11 @@ public class Atoi {
 
 	public static void main(String[] args) {
 		System.out.println(Integer.MAX_VALUE);
-	     Integer a=	Atoi.atoi("2147483648");
+	     Integer a=	Atoi.atoi("0.0.0");
 		System.out.println(a);
+		String str="0000.0.0";
+		boolean b=str.contains(".");
+		System.out.println(b);
 	}
 
 }
