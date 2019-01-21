@@ -37,6 +37,7 @@ public class BlockingQueueTest {
         final Basket basket = new Basket();
         // 定义苹果生产者
         class Producer implements Runnable {
+            @Override
             public void run() {
                 try {
                     while (true) {
@@ -56,6 +57,7 @@ public class BlockingQueueTest {
         }
         // 定义苹果消费者
         class Consumer implements Runnable {
+            @Override
             public void run() {
                 try {
                     while (true) {

@@ -2,7 +2,6 @@ package com.example.arithmetic.code.higer;
 
 /**
  * @Description: TODO
- * @Author: caoyuanhua
  * @Date: 2018/11/30 15:11
  */
 public class PersonDO {

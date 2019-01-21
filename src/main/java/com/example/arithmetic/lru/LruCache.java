@@ -58,6 +58,7 @@ public class LruCache<K,V> extends LinkedHashMap<K,V> {
 		lruCache.put(2,1);
 		lruCache.put(3,1);
 		lruCache.get(1);
+		lruCache.get(2);
 		lruCache.put(4,1);
 
 		for (Map.Entry entry:lruCache.entrySet()){

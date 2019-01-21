@@ -4,7 +4,6 @@ import java.util.PrimitiveIterator;
 
 /**
  * @Description: TODO
- * @Author: caoyuanhua
  * @Date: 2018/11/30 15:08
  */
 public class UserDO extends PersonDO {
